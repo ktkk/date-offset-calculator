@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "time-period-calculator"
+name = "date-offset-calculator"
 version = "0.1.0"
