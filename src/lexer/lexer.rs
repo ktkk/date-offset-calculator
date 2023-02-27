@@ -23,7 +23,9 @@ where
         }
     }
 
-    pub fn lex(self) -> Result<(), LexingError> {
+    pub fn lex(self) -> Result<Vec<Token>, LexingError> {
+        let mut tokens = vec![];
+
         for (token, offset) in self.token_generator {
             if self.options.fail_on_unknown {
                 if let Token::Unknown(token) = token {
@@ -33,10 +35,10 @@ where
                 }
             }
 
-            println!("{token:?}");
+            tokens.push(token);
         }
 
-        Ok(())
+        Ok(tokens)
     }
 }
 
