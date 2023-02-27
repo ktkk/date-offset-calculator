@@ -1,9 +1,9 @@
-use super::Offset;
+use super::lexer::Offset;
 use crate::token::{TimeUnit, Token};
 
 pub struct TokenGenerator<'source> {
     content: &'source [char],
-    offset: usize,
+    offset: Offset,
 }
 
 impl<'source> TokenGenerator<'source> {
